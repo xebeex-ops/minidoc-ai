@@ -1,0 +1,17 @@
+# Virtual environment
+.venv/
+
+# Python cache and bytecode
+__pycache__/
+*.py[cod]
+
+# Environment variables and secrets
+.env
+
+# Testing and tooling caches
+.pytest_cache/
+.ruff_cache/
+
+# Local data and database storage
+data/
+chroma_db/
