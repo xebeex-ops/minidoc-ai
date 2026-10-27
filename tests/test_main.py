@@ -18,3 +18,19 @@ def test_health_endpoint():
     assert response.json() == {
         'status':'ok'
     }  
+
+def test_ask_endpoint():
+    response = client.post(''
+    '/ask',
+    json={'question':'What is this document about?'}
+    )
+
+    assert response.status_code == 200
+    assert response.json() == {
+        'received_question':'What is this document about?'
+    }
+
+def test_ask_endpoint_requires_question():
+    response = client.post('/ask', json={})
+
+    assert response.status_code == 422
