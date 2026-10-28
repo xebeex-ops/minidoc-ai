@@ -1,5 +1,7 @@
 from fastapi.testclient import TestClient
 from minidoc.main import app
+import io
+import fitz
 
 client = TestClient(app)
 
