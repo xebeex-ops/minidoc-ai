@@ -34,3 +34,13 @@ def test_ask_endpoint_requires_question():
     response = client.post('/ask', json={})
 
     assert response.status_code == 422
+
+def test_ask_endpoint_rejects_empty_question():
+    response = client.post('/ask', json={'question': ''})
+    
+    assert response.status_code == 422
+
+def test_ask_endpoint_rejects_whitespace_question():
+    response = client.post('/ask', json={'question':' '})
+
+    assert response.status_code == 422
